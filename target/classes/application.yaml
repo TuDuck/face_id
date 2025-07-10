@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: web-be
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 5          # ✅ Minimum pool size
+      maximum-pool-size: 20    # ✅ Maximum pool size
+      pool-name: HikariPool    # Optional: Custom pool name
+  jpa:
+    hibernate:
+      ddl-auto: validate  # hoặc validate / create / create-drop
+      auto-commit: false
+    show-sql: true
+
+#logging:
+#  level:
+#    org.hibernate.SQL: DEBUG
